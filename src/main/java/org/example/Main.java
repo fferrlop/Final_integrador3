@@ -1,17 +1,30 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import Organismos.Abeja;
+import Organismos.Flor;
+import Organismos.Lagarto;
+import Organismos.Posicion;
+import Organismos.Halcón;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Abeja abeja = new Abeja(new Posicion(0, 0), 100, 1, true);
+        Halcón halcon = new Halcón(new Posicion(1, 1), 100, 1, true);
+        Lagarto lagarto = new Lagarto(new Posicion(2, 2), 100, 1, true);
+        Flor flor = new Flor(new Posicion(3, 3), 100, 1, true);
+
+        // Hacer que los organismos interactúen entre sí
+        abeja.interactuar(flor);
+        halcon.interactuar(abeja);
+        lagarto.interactuar(lagarto);
+
+        // Imprimir la salud de los organismos después de las interacciones
+        System.out.println("Salud de la abeja: " + abeja.getSalud());
+        System.out.println("Salud del halcón: " + halcon.getSalud());
+        System.out.println("Salud del lagarto: " + lagarto.getSalud());
+        System.out.println("Salud de la flor: " + flor.getSalud());
     }
 }
+
