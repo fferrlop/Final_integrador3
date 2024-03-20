@@ -12,7 +12,9 @@ public class Flor extends Organismo {
         }
     }
 
-    public int getSalud() {
-        return this.salud;
+    @Override
+    public Organismo reproducirse() {
+        System.out.println("La flor se está reproduciendo");
+        return new Flor(new Posicion(0, 0), 100, 0, true);
     }
 }
