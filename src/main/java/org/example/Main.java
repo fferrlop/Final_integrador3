@@ -109,7 +109,7 @@ public class Main {
         EstrategiaConservacion estrategia = new EstrategiaConservacion() {
             @Override
             public void aplicarEstrategia() {
-                // Implementar lógica para aplicar la estrategia de conservación
+
             }
         };
         AnalisisAvanzado.evaluarEstrategiaConservacion(simulacion2, estrategia);
