@@ -7,13 +7,16 @@ public class Halcón extends Organismo {
 
     @Override
     public void interactuar(Organismo otroOrganismo) {
-        if (!(otroOrganismo instanceof Halcón)) {
-            this.salud += 20;
+        if (otroOrganismo instanceof Abeja) {
+            otroOrganismo.salud = 0;
+            otroOrganismo.vivo = false; // La abeja "desaparece"
+            System.out.println("El halcon ha cazado a la abeja");
         }
     }
 
-    public int getSalud() {
-        return this.salud;
+    @Override
+    public Organismo reproducirse() {
+        System.out.println("El halcon se está reproduciendo");
+        return new Halcón(new Posicion(0, 0), 100, 0, true);
     }
-
 }
